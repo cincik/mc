@@ -659,9 +659,6 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
     add_widget (find_dlg, content_use_cbox);
     //cbox_position = FIND_Y - 5;
 
-    only_directories_cbox = check_new (y2++, x2, options.only_directories, file_only_directories_label);
-    add_widget (find_dlg, only_directories_cbox);
-
     /* Continue 1st column */
     recursively_cbox = check_new (y1++, x1, options.find_recurs, file_recurs_label);
     add_widget (find_dlg, recursively_cbox);
@@ -681,6 +678,8 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
     skip_hidden_cbox = check_new (y1++, x1, options.skip_hidden, file_skip_hidden_label);
     add_widget (find_dlg, skip_hidden_cbox);
 
+    only_directories_cbox = check_new (y1++, x1, options.only_directories, file_only_directories_label);
+    add_widget (find_dlg, only_directories_cbox);
     /* Continue 2nd column */
     content_regexp_cbox = check_new (y2++, x2, options.content_regexp, content_regexp_label);
     widget_disable (WIDGET (content_regexp_cbox), disable);
